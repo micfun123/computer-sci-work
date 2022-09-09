@@ -1,7 +1,7 @@
 #include <stdio.h>
 int choise;
 
-int timestables(){
+void timestables(){
     int table = 0;
     int amount = 0;
     printf("enter the times table you want\n");
@@ -15,7 +15,7 @@ int timestables(){
     
 }
 
-int vat(){
+void vat(){
     float vatamount;
     printf("Enter the amount for vat to be added\n ");
     scanf("%f", &vatamount);
@@ -25,7 +25,7 @@ int vat(){
     
 }
 
-int tax(){
+void tax(){
     float taxamount;
     float income;
     printf("Enter the amount your income is\n ");
