@@ -1,5 +1,8 @@
         LDA back
         out
+        LDA back
+        sub ONE
+        STA back
         LDA ONE
         STA COUNT
 LOOPTOP LDA COUNT
