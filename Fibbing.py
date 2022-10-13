@@ -15,6 +15,5 @@ for i in range(amount):
 
 print(list)
 print(f"The total amount of all the numbers is: {total}")
-res = list[::-1]
-print(f"Your array backwards is {res}")
+print(f"Your array backwards is {list[::-1]}")
 
