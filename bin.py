@@ -23,11 +23,15 @@ def addone():
     global negnumb
     negnumb = negnumb[::-1]
     carry = 0
+    print(negnumb)
+    print("...")
     if negnumb[0] == 0:
         negnumb[0] = 1
-
+        
     else:
         for i in negnumb:
+            print(carry)
+            print(negnumb)
             if negnumb[i] == 1:
                 if carry == 1:
                     negnumb[i] = 1
@@ -41,10 +45,9 @@ def addone():
                 else:
                     negnumb[i] = 0
                     carry = 0
-                    
+
     negnumb = negnumb[::-1]
-    return negnumb
-                    
+    print(negnumb)
 
 
 
