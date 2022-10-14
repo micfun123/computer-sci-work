@@ -1,3 +1,6 @@
+from operator import neg
+
+
 realnum = []
 negnumb = []
 
@@ -17,6 +20,33 @@ def two_complement(hand_the_bin_over):
             negnumb.append(0)
         else:
             negnumb.append(1)
+    addone()
+
+def addone():
+    carry = 0
+    if negnumb[0] == 0:
+        negnumb.pop(0)
+        negnumb.append(1)
+    else:
+        for i in negnumb:
+            if negnumb[i] == 1:
+                if carry == 1:
+                    negnumb[i] = 1
+                else:
+                    negnumb[i] = 0
+                    carry = 1
+            if negnumb[i] == 0:
+                if carry == 1:
+                    negnumb[i] = 1
+                    carry = 0
+                else:
+                    negnumb[i] = 0
+                    carry = 0
+    return negnumb
+                    
+
+
+
     
     
 
@@ -33,6 +63,7 @@ tobin(x)
 realnum = realnum[::-1]
 print(f"Your number in binary is {realnum}")
 two_complement(realnum)
+
 print(f"Your neg number in binary is {negnumb}")
 
 
