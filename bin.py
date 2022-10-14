@@ -1,6 +1,3 @@
-from operator import neg
-
-
 realnum = []
 negnumb = []
 
@@ -23,10 +20,12 @@ def two_complement(hand_the_bin_over):
     addone()
 
 def addone():
+    global negnumb
+    negnumb = negnumb[::-1]
     carry = 0
     if negnumb[0] == 0:
-        negnumb.pop(0)
-        negnumb.append(1)
+        negnumb[0] = 1
+
     else:
         for i in negnumb:
             if negnumb[i] == 1:
@@ -42,6 +41,8 @@ def addone():
                 else:
                     negnumb[i] = 0
                     carry = 0
+                    
+    negnumb = negnumb[::-1]
     return negnumb
                     
 
