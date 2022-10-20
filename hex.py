@@ -1,8 +1,3 @@
-
-
-from secrets import token_hex
-
-
 raw_num = int(input("Enter a number: "))
 
 def tohex(num):
