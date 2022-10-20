@@ -38,13 +38,6 @@ def addone():
 
     negnumb = negnumb[::-1]
 
-
-
-    
-    
-
-
-
 stuff = [128, 68 , 32 , 16 , 8 , 4 , ]
 x = int(input("Enter da number: "))
 while x < 0 or x > 255:
