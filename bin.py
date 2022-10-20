@@ -34,26 +34,7 @@ def addone():
             else:
                 negnumb[i] = 0
                 carry = 1
-    
 
-        
-    #else:
-    #    for i in negnumb:
-    #        print(carry)
-    #        print(negnumb)
-    #        if negnumb[i] == 1:
-    #            if carry == 1:
-    #                negnumb[i] = 1
-    #            else:
-    #                negnumb[i] = 0
-    #                carry = 1
-    #        if negnumb[i] == 0:
-    #            if carry == 1:
-    #                negnumb[i] = 1
-    #                carry = 0
-    #            else:
-    #                negnumb[i] = 0
-    #                carry = 0
 
     negnumb = negnumb[::-1]
 
