@@ -9,6 +9,8 @@ def tohex(num):
             hex.append(num % 16)
         num = num // 16
     hex = hex[::-1]
+    hex = ''.join(hex)
+    hex = "Ox"+hex
     return hex
 
 print(tohex(raw_num))
