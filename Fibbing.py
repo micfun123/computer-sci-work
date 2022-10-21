@@ -1,10 +1,13 @@
 a = 0
 b = int(input("enter the starting value: "))
-amount = int(input("How many places should it go up to: "))
 z = 0
 
 total = 0
 list = []
+
+amount = int(input("How many places should it go up to: "))
+while(amount < 0 or amount > 10):
+    amount = int(input("How many places should it go up to: "))
 
 for i in range(amount):
     z = a + b
