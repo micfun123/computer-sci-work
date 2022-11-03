@@ -37,11 +37,15 @@ while solved == 0:
                 if i in word:
                     possitioni = word.index(i)
                     if user_inpute[possitioni] == word[possitioni]:
-                        print(greenterminalcolour + f"Letter {i} is in the right place")
+                        #print(greenterminalcolour + f"Letter {i} is in the right place", end = '')
+                        print(greenterminalcolour + f"{i} ", end = '')
                     else:
-                        print(yellowterminalcolour + f"Letter {i} is in the word but wronge place")
+                        #print(yellowterminalcolour + f"Letter {i} is in the word but wronge place", end = '')
+                        print(yellowterminalcolour + f"{i} ", end = '')
                 else:
-                    print(redterminalcolour + f"Letter {i} is not in the word")
+                    #print(redterminalcolour + f"Letter {i} is not in the word", end = '')
+                    print(redterminalcolour + f"{i} ", end = '')
+                
                 
             print(whiteterminalcolour)
             print("\n")
