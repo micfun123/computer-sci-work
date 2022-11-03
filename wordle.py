@@ -15,7 +15,7 @@ lines = open('words.txt').read().splitlines()
 word = random.choice(lines)
 word = word.replace(" ", "")
 word = word.upper()
-print(word)
+#print(word)
 #add to array
 letters = []
 for i in word:
