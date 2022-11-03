@@ -23,6 +23,7 @@ for i in word:
 
 displaylast = []
 
+attempts = 0
 while solved == 0:
     user_inpute = input("Guess 5 letter words:\n")
     if len(user_inpute) < 5 or len(user_inpute) > 5:
@@ -50,7 +51,10 @@ while solved == 0:
             print(whiteterminalcolour)
             print("\n")
 
-            
+            attempts += 1
+    if attempts == 5:
+        print(redterminalcolour + "You have run out of attempts")
+        solved = 1   
 
 print(whiteterminalcolour + "Thank you for playing")
 
