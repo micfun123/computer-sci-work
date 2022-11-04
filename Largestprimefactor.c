@@ -3,22 +3,15 @@
 #include <stdio.h>
 
 void main(){
-    long long number = 0;
-    long long largest = 0;
-    long long i = 0;
-    printf("Enter num \n");
-    scanf("%ld",&number);
-
-    for (long long i = 2; i < number; i++)
-    {
-        printf("%ld\n",i);
-        if (number % i == 0)
-        {
-           largest = i;
-           number = number / i;
+    long long int target = 600851475143;
+    long long int i = 2;
+    while(i < target){
+        if(target % i == 0){
+            target = target / i;
         }
-        
-
+        else{
+            i++;
+        }
     }
-    printf("%ld",largest);
+    printf("%lld", i);
 }
