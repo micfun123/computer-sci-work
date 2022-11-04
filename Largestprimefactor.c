@@ -5,8 +5,8 @@
 void main(){
     long long int target;
     long long int i = 2;
-    printf("enter the target numbers: ");
-    scanf("%d", &target);
+    printf("Enter the number you want to find the largest prime factor of\n");
+    scanf("%lld", &target);
     while(i < target){
         if(target % i == 0){
             target = target / i;
