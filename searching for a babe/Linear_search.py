@@ -1,4 +1,5 @@
 
+names=["cat","dog","mouses"]
 
 def Linear_search_for(arr, key):
     for i in range(len(arr)):
@@ -13,3 +14,6 @@ def Linear_search_while(arr, key):
             return i
         i += 1
     return -1
+
+print(Linear_search_for(names,"cat"))
+print(Linear_search_while(names,"cat"))
