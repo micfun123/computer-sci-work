@@ -32,7 +32,7 @@ def Linear_search_while(arr, key):
 
 for i in range(10000):
     start = time.time()
-    print(Linear_search_while(diglist,str(random.randint(100,999))))
+    Linear_search_while(diglist,str(random.randint(100,999)))
     end = time.time()
     times.append(end-start)
     
@@ -44,17 +44,17 @@ for i in times:
 
 print((totaltime/10000))
 
-for i in range(10000):
-    start = time.time()
-    Linear_search_while(diglist,str(random.randint(100,999)))
-    end = time.time()
-    timeloop.append(end-start)
-    
-
-totaltime = 0
-for i in times:
-    totaltime = totaltime + i
-
-
-print((totaltime/10000))
+#for i in range(10000):
+#    start = time.time()
+#    Linear_search_while(diglist,str(random.randint(100,999)))
+#    end = time.time()
+#    timeloop.append(end-start)
+#    
+#
+#totaltime = 0
+#for i in times:
+#    totaltime = totaltime + i
+#
+#
+#print((totaltime/10000))
 #print(Linear_search_for(names,"cat"))
