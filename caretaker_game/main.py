@@ -8,19 +8,6 @@ class Critter(object):
     @staticmethod
     def status():
         print("\nTotal critters =", Critter.total)
-        
-    @property
-    def mood(self):
-        unhappiness = self.hunger + self.boredom
-        if unhappiness < 5:
-            m = "happy"
-        elif 5 <= unhappiness <= 10:
-            m = "okay"
-        elif 11 <= unhappiness <= 15:
-            m = "frustrated"
-        else:
-            m = "mad"
-        return m
 
     def __init__(self, name):
         self.name = name
@@ -32,8 +19,25 @@ class Critter(object):
     def __pass_time(self):
         self.hunger += 1
         self.boredom += 1
-        self.update_mood()
+        self.__update_mood()
 
+    def __update_mood(self):
+        unhappiness = self.hunger + self.boredom
+        if unhappiness < 5:
+            self.mood = "happy"
+        elif 5 <= unhappiness <= 10:
+            self.mood = "okay"
+        elif 11 <= unhappiness <= 15:
+            self.mood = "frustrated"
+        else:
+            self.mood = "mad"
+
+    def eat(self, food=4):
+        print("Brruppp. Thank you.")
+        self.hunger -= food
+        if self.hunger < 0:
+            self.hunger = 0
+        self.__pass_time()
 
     def __str__(self) -> str:
         rep = "Critter object"
@@ -42,8 +46,13 @@ class Critter(object):
     
     def talk(self):
         print("Hi, I'm", self.name, "and I feel", self.mood, "now.\n")
+        self.__pass_time()
+
 
 crit = Critter("Michael")
 crit.talk()
+crit.talk()
+for i in range(5):
+    crit.talk()
 
 Critter.status()
