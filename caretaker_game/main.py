@@ -85,7 +85,7 @@ while chosen != "0":
         5 - Change critter name
         6 - add critter
         7 - change critter
-
+        8 - list critters
         """
     )
 
@@ -113,9 +113,10 @@ while chosen != "0":
             if i.name == entercritsname:
                 crit = i
                 print("Critter changed.")
-                break
-            else:
-                print("Critter not found.")
+    elif chosen == "8":
+        for i in farmcrits:
+            print(i)
+                
     else:
         print("Sorry, but", chosen, "isn't a valid choice.")
 
