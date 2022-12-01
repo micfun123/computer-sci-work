@@ -69,7 +69,8 @@ class Critter(object):
         self.__pass_time()
 
 crit = Critter(str(input("Enter a name for your critter: ")))
-
+farmcrits = []
+farmcrits.append(crit)
 chosen = None
 while chosen != "0":
     print(
@@ -81,6 +82,10 @@ while chosen != "0":
         2 - Feed your critter
         3 - Play with your critter
         4 - Critter status
+        5 - Change critter name
+        6 - add critter
+        7 - change critter
+
         """
     )
 
@@ -97,6 +102,20 @@ while chosen != "0":
         crit.play()
     elif chosen == "4":
         Critter.status()
+    elif chosen == "5":
+        crit.name = str(input("What do you want to name your critter?"))
+    elif chosen == "6":
+        crit = Critter(str(input("Enter a name for your critter: ")))
+        farmcrits.append(crit)
+    elif chosen == "7":
+        entercritsname = input("Enter the name of the critter you want to change: ")
+        for i in farmcrits:
+            if i.name == entercritsname:
+                crit = i
+                print("Critter changed.")
+                break
+            else:
+                print("Critter not found.")
     else:
         print("Sorry, but", chosen, "isn't a valid choice.")
 
