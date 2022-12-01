@@ -85,7 +85,6 @@ while chosen != "0":
     )
 
     chosen = input("Choice: ")
-    print()
 
     if chosen == "0":
         print("Good-bye.")
