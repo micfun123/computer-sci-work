@@ -39,6 +39,13 @@ class Critter(object):
             self.hunger = 0
         self.__pass_time()
 
+    def play(self, fun=4):
+        print("Wheee!")
+        self.boredom -= fun
+        if self.boredom < 0:
+            self.boredom = 0
+        self.__pass_time()
+
     def __str__(self) -> str:
         rep = "Critter object"
         rep += "name: " + self.name + "\n"
@@ -54,5 +61,9 @@ crit.talk()
 crit.talk()
 for i in range(5):
     crit.talk()
+
+crit.eat()
+crit.eat()
+crit.talk()
 
 Critter.status()
