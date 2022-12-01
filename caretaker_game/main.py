@@ -9,6 +9,19 @@ class Critter(object):
     def status():
         print("\nTotal critters =", Critter.total)
 
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        if new_name == "":
+            print("A critter's name can't be the empty string.")
+        else:
+            self.__name = new_name
+            print("Name changed.")
+
+
     def __init__(self, name):
         self.name = name
         self.hunger = 0
@@ -55,15 +68,37 @@ class Critter(object):
         print("Hi, I'm", self.name, "and I feel", self.mood, "now.\n")
         self.__pass_time()
 
+crit = Critter(str(input("Enter a name for your critter: ")))
 
-crit = Critter("Michael")
-crit.talk()
-crit.talk()
-for i in range(5):
-    crit.talk()
+chosen = None
+while chosen != "0":
+    print(
+        """
+        Critter Caretaker
 
-crit.eat()
-crit.eat()
-crit.talk()
+        0 - Quit
+        1 - Listen to your critter
+        2 - Feed your critter
+        3 - Play with your critter
+        4 - Critter status
+        """
+    )
+
+    chosen = input("Choice: ")
+    print()
+
+    if chosen == "0":
+        print("Good-bye.")
+    elif chosen == "1":
+        crit.talk()
+    elif chosen == "2":
+        crit.eat()
+    elif chosen == "3":
+        crit.play()
+    elif chosen == "4":
+        Critter.status()
+    else:
+        print("Sorry, but", chosen, "isn't a valid choice.")
+
 
 Critter.status()
