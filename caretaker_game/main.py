@@ -91,7 +91,8 @@ while chosen != "0":
     elif chosen == "1":
         crit.talk()
     elif chosen == "2":
-        crit.eat()
+        intfood = int(input("How much food do you want to give your critter?"))
+        crit.eat(intfood)
     elif chosen == "3":
         crit.play()
     elif chosen == "4":
