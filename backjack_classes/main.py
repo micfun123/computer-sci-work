@@ -31,8 +31,10 @@ class Deck(object):
                 self.cards.append(Card(s, v))
 
     def show(self):
+        print("\n++++++++++++++++++++++++++++++++++++++++++++++++++++")
         for c in self.cards:
             print(c)
+        print("\n++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
     def shuffle(self):
         for i in range(len(self.cards)-1, 0, -1):
@@ -41,3 +43,39 @@ class Deck(object):
 
     def drawCard(self):
         return self.cards.pop()
+
+
+class player(object):
+    def __init__(self,player_money,deck) -> None:
+        self.hand = []
+        self.total_count = 0
+        self.money = int(player_money)
+        self.deck = deck
+        for i in range(2):
+            self.add_card(self.deck)
+        self.show_hand()
+            
+    def add_card(self,deck):
+        self.hand.append(deck.drawCard())
+        self.show_hand()
+
+        
+
+        
+            
+
+    def show_hand(self):
+        print("\n ===============================")
+        for card in self.hand:
+            print(card)
+        print("\n ===============================")
+
+newdeck = Deck()
+newdeck.show()
+newdeck.shuffle()
+newdeck.show()
+
+michael = player(1000000000000,newdeck)
+gwyneth = player(2,newdeck)
+
+
