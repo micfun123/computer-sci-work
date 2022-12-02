@@ -60,15 +60,22 @@ class player(object):
         self.show_hand()
 
         
-
-        
-            
-
     def show_hand(self):
         print("\n ===============================")
         for card in self.hand:
             print(card)
         print("\n ===============================")
+
+    def hand_value(self):
+        val = 0
+        for i in self.hand:
+            if i.value == "A":
+                val += 11
+            elif i.value in ["J", "Q", "K"]:
+                val += 10
+            else:
+                val += int(i.value)
+        print(val)
 
 newdeck = Deck()
 newdeck.show()
@@ -77,5 +84,8 @@ newdeck.show()
 
 michael = player(1000000000000,newdeck)
 gwyneth = player(2,newdeck)
+michael.show_hand()
+michael.add_card(newdeck)
+michael.hand_value()
 
 
