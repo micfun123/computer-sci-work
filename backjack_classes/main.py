@@ -64,6 +64,7 @@ class player(object):
         print("\n ===============================")
         for card in self.hand:
             print(card)
+        print(f"Total value: {self.hand_value()}")
         print("\n ===============================")
 
     def hand_value(self):
@@ -75,7 +76,8 @@ class player(object):
                 val += 10
             else:
                 val += int(i.value)
-        print(val)
+        self.total_count = val
+        return val
 
 newdeck = Deck()
 newdeck.show()
@@ -86,6 +88,6 @@ michael = player(1000000000000,newdeck)
 gwyneth = player(2,newdeck)
 michael.show_hand()
 michael.add_card(newdeck)
-michael.hand_value()
+
 
 
