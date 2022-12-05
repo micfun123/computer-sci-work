@@ -13,4 +13,15 @@ def bubble_sort(arr):
                 arr[j],arr[j+1] = arr[j+1], arr[j]
     return arr
 
+def bubble_sort2(arr):
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(len(arr)-1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swapped = True
+
+
+
 print(bubble_sort(diglist))
