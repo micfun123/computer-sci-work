@@ -1,6 +1,6 @@
 import string
 
-userinpute = "A cat sat on the bed, a cat sat on the chair, The dog sat under the bed, The dog sat under the chair."
+userinpute = str(input("Enter a sentance: "))
 
 
 def compress_via_dictionary(str) -> str:
