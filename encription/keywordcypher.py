@@ -45,7 +45,7 @@ def dencript_keyword_cipher(keyword,cipher):
 
 print(encript_keyword_cipher(keyword,phrase))
 code = encript_keyword_cipher(keyword,phrase)
-dencript_keyword_cipher(keyword,code)
+print(dencript_keyword_cipher(keyword,code))
 
 
 
