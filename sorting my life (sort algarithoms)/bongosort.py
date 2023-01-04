@@ -9,30 +9,25 @@ diglist = ['617', '605', '914', '850', '820', '296', '772', '739', '307', '399',
 '556', '534', '732', '725', '951', '504', '287', '580', '986', '857', '787', '930', '639', '150', '568', '898', '172', '309', '117', '434', '602', '557', '828', '757', '800', '581', '549', '320', '531', '613', '880', '237', '155', '131', '512', '127', '913', '227', '645', '514', '241', '824', '560', '250', '907', '516', '816', '291', '499', '572', '788', '214', '490', '134']
 # Python program for implementation of Bogo Sort
 
+
 a = diglist
 
 # Sorts array a[0..n-1] using Bogo sort
 def bogoSort(a):
-    n = len(a)
     while (is_sorted(a)== False):
-        shuffle(a)
+        random.shuffle(a)
         print(a)
 
 
 # To check if array is sorted or not
-def is_sorted(a):
+def is_sorted(a): 
     n = len(a)
     for i in range (0,n-1):
         if (a[i] > a[i+1] ):
             return False
     return True
 
-# To generate permutation of the array
-def shuffle(a):
-    n = len(a)
-    for i in range (0,n):
-        r = random.randint(0,n-1)
-        a[i], a[r] = a[r], a[i]
+
 
 # Driver code to test above
 
