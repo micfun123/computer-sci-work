@@ -4,7 +4,9 @@ current_exchange_rate= {
     'EUR' : 1.17,
     'USD' : 1.31,
     'JPY' : 132.53,
-    'AED' : 4.75
+    'AED' : 4.754,
+    'AUD' : 1.77,
+    'BGN' : 2.11,
 }
 
 class Exchange(Frame):
