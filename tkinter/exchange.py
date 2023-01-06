@@ -1,4 +1,5 @@
 from tkinter import *
+import requests
 
 current_exchange_rate= {
     'EUR' : 1.17,
@@ -8,6 +9,11 @@ current_exchange_rate= {
     'AUD' : 1.77,
     'BGN' : 2.11,
 }
+
+url = "https://api.exchangerate.host/latest"
+response = requests.get(url)
+data = response.json()
+Currecy = data["rates"]
 
 class Exchange(Frame):
     def __init__(self, parent=None):
@@ -35,7 +41,7 @@ class Exchange(Frame):
 
     def onPress(self):
         gbp = float(self.gbp.get())
-        result = gbp * current_exchange_rate[self.to_currency.get()] 
+        result = gbp * Currecy[self.to_currency.get()]
         self.result.config(text="%.2f" % result + " "+  self.to_currency.get())
 
 
