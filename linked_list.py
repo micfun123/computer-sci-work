@@ -17,12 +17,12 @@ def add_item(linked_list_example, new_item):
     linked_list_example.append([new_item, None])
     linked_list_example[possition][1] = len(linked_list_example)-1
     #sort the pointers
-    for i in range(0,len(linked_list_example)-1):
-        if linked_list_example[i][0] > linked_list_example[i+1][0]:
-            linked_list_example[i][1] = i+1
-            linked_list_example[i+1][1] = i
-    print_linked_list(linked_list_example)
-    print("\n\n")
+    #####for i in range(0,len(linked_list_example)-1):
+    #####    if linked_list_example[i][0] > linked_list_example[i+1][0]:
+    #####        linked_list_example[i][1] = i+1
+    #####        linked_list_example[i+1][1] = i
+    #####print_linked_list(linked_list_example)
+    #####print("\n\n")
 
 while True:
     print("Press 1 to view the linked list")
