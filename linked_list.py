@@ -5,12 +5,18 @@ def print_linked_list(linked_list_example):
     #link list in the format [data, next]
     possition = 0
     while linked_list_example[possition][1] != None:
-        print(linked_list_example[possition][0])
+        print(linked_list_example[possition][0],linked_list_example[possition][1])
         possition = linked_list_example[possition][1]
-    print(linked_list_example[possition][0])
+    print(linked_list_example[possition][0],linked_list_example[possition][1])
 
-
-
+def add_item(linked_list_example, new_item):
+    #link list in the format [data, next]
+    possition = 0
+    while linked_list_example[possition][1] != None:
+        possition = linked_list_example[possition][1]
+    linked_list_example.append([new_item, None])
+    linked_list_example[possition][1] = len(linked_list_example)-1
+    
 
 while True:
     print("Press 1 to view the linked list")
@@ -20,5 +26,8 @@ while True:
     choice = int(input("What would you like to do? "))
     if choice == 1:
         print_linked_list(linked_list_example)
+        print("\n\n")
     elif choice == 2:
+        new_item = input("What would you like to add? ")
+        add_item(linked_list_example, new_item)
         
