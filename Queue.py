@@ -1,6 +1,7 @@
 
 queue = ["cat", "dog", "bird", "fish","cow"]
 
+
 def enqueue(thing,queue):
     queue.append(thing)
     print(queue)
