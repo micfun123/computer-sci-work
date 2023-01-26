@@ -33,6 +33,20 @@ void insert(int item)
     }
 }
 
+void Dequeue()
+{
+    if (front == -1 || front > rear)
+    {
+        printf("Queue underflow \n");
+        return ;
+    }
+    else
+    {
+        printf("Element deleted from queue is : %d \n", queue[front]);
+        front = front + 1;
+    }
+}
+
 void main()
 {
     
@@ -48,16 +62,7 @@ void main()
             insert(item);
             break;
         case 2:
-            if (front == -1 || front > rear)
-            {
-                printf("Queue underflow \n");
-                return;
-            }
-            else
-            {
-                printf("Element deleted from queue is : %d \n", queue[front]);
-                front = front + 1;
-            }
+            Dequeue();
             break;
         case 3:
             peek();
