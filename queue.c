@@ -6,18 +6,16 @@ int queue[MAX];
 int front = -1, rear = -1;
 int choice, item;
 
-
-void peek(){
+void peek()
+{
     if (front == -1)
-                printf("Queue is empty \n");
+        printf("Queue is empty \n");
     else
-        {
-                printf("Queue is : \n");
-                for (int i = front; i <= rear; i++)
-                    printf("%d \n", queue[i]);
-        }
-    
-
+    {
+        printf("Queue is : \n");
+        for (int i = front; i <= rear; i++)
+            printf("%d \n", queue[i]);
+    }
 }
 
 void insert(int item)
@@ -38,7 +36,7 @@ void Dequeue()
     if (front == -1 || front > rear)
     {
         printf("Queue underflow \n");
-        return ;
+        return;
     }
     else
     {
@@ -49,7 +47,7 @@ void Dequeue()
 
 void main()
 {
-    
+
     while (1)
     {
         printf("\n\nPress 1 to insert an element into the queue \n Press 2 to delete an element from the queue \n Press 3 to display the queue \n Press 4 to exit \n");
@@ -70,7 +68,6 @@ void main()
         case 4:
             exit(0);
             break;
-        
-
+        }
     }
-}}
+}
