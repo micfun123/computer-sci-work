@@ -1,7 +1,8 @@
-#python stack files
+# python stack files
 
 stack = []
 max = 15
+
 
 def add(data):
     if len(stack) >= max:
@@ -9,27 +10,33 @@ def add(data):
     else:
         stack.append(data)
 
+
 def pop():
     data = stack[-1]
     del stack[-1]
     return data
 
+
 def peek():
     return stack[-1]
+
 
 def show():
     print(stack)
 
+
 for index in range(10):
     add(index)
- 
+
 while True:
-    print("""\n 
+    print(
+        """\n 
     1. to add to the stack\n
     2. to pop from the stack\n
     3. to peek at the stack\n
     4. to print the stack\n
-    5. to exit\n""")	
+    5. to exit\n"""
+    )
 
     choice = int(input("Enter your choice: "))
     if choice == 1:
@@ -44,4 +51,3 @@ while True:
         show()
     elif choice == 5:
         exit()
-
