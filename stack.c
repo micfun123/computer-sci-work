@@ -29,14 +29,12 @@ void peek()
     }
 }
 
-void pop(){
+void pop()
+{
     item = stack[top];
     top = top - 1;
     printf("Element deleted from stack is : %d \n", item);
-
 }
-
-
 
 void main()
 {
