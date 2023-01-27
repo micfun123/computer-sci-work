@@ -1,9 +1,13 @@
 #python stack files
 
 stack = []
+max = 15
 
 def add(data):
-    stack.append(data)
+    if len(stack) >= max:
+        print("The stack is full")
+    else:
+        stack.append(data)
 
 def pop():
     data = stack[-1]
