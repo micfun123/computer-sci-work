@@ -3,7 +3,7 @@
 #include <math.h>
 
 // array to be sorted
-int array[] = { 5,2,6,1134,13413,54,1,6,89,23,6,8,34,73,4,327,5,324 };
+int data[] = { 5,2,6,1134,13413,54,1,6,89,23,6,8,34,73,4,327,5,324 };
 
 // merge function
 void merge(int *array){
@@ -45,5 +45,5 @@ void merge(int *array){
     }
 }
 void main(){
-    merge(array);
+    merge(data);
 }
