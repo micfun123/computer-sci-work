@@ -1,27 +1,20 @@
 import pygame
 import random
 import time
+
 score = 0
-# Import pygame.locals for easier access to key coordinates
 
 # Updated to conform to flake8 and black standards
 
 from pygame.locals import (
     RLEACCEL,
     K_UP,
-
     K_DOWN,
-
     K_LEFT,
-
     K_RIGHT,
-
     K_ESCAPE,
-
     KEYDOWN,
-
     QUIT,
-
 )
 
 
@@ -32,10 +25,7 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
 
-
-
 class Enemy(pygame.sprite.Sprite):
-
     def __init__(self):
 
         super(Enemy, self).__init__()
@@ -45,19 +35,13 @@ class Enemy(pygame.sprite.Sprite):
         self.surf.fill((255, 100, 150))
 
         self.rect = self.surf.get_rect(
-
             center=(
-
                 random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100),
-
                 random.randint(0, SCREEN_HEIGHT),
-
             )
-
         )
 
         self.speed = random.randint(5, 20)
-
 
     # Move the sprite based on speed
 
@@ -76,13 +60,13 @@ class Enemy(pygame.sprite.Sprite):
 
 # The surface drawn on the screen is now an attribute of 'player'
 
-class Player(pygame.sprite.Sprite):
 
+class Player(pygame.sprite.Sprite):
     def __init__(self):
 
         super(Player, self).__init__()
-        #self.surf = pygame.image.load("jet.png").convert()
-        #self.surf.set_colorkey((255, 255, 255), RLEACCEL)
+        # self.surf = pygame.image.load("jet.png").convert()
+        # self.surf.set_colorkey((255, 255, 255), RLEACCEL)
         self.surf = pygame.Surface((75, 25))
 
         self.surf.fill((200, 255, 200))
@@ -90,40 +74,40 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.surf.get_rect()
 
     def update(self, pressed_keys):
-            
-            if pressed_keys[K_UP]:
-    
-                self.rect.move_ip(0, -5)
-    
-            if pressed_keys[K_DOWN]:
-    
-                self.rect.move_ip(0, 5)
-    
-            if pressed_keys[K_LEFT]:
-    
-                self.rect.move_ip(-5, 0)
-    
-            if pressed_keys[K_RIGHT]:
-    
-                self.rect.move_ip(5, 0)
-    
-            # Keep player on the screen
-    
-            if self.rect.left < 0:
-    
-                self.rect.left = 0
-    
-            if self.rect.right > SCREEN_WIDTH:
-    
-                self.rect.right = SCREEN_WIDTH
-    
-            if self.rect.top <= 0:
-    
-                self.rect.top = 0
-    
-            if self.rect.bottom >= SCREEN_HEIGHT:
-    
-                self.rect.bottom = SCREEN_HEIGHT
+
+        if pressed_keys[K_UP]:
+
+            self.rect.move_ip(0, -5)
+
+        if pressed_keys[K_DOWN]:
+
+            self.rect.move_ip(0, 5)
+
+        if pressed_keys[K_LEFT]:
+
+            self.rect.move_ip(-5, 0)
+
+        if pressed_keys[K_RIGHT]:
+
+            self.rect.move_ip(5, 0)
+
+        # Keep player on the screen
+
+        if self.rect.left < 0:
+
+            self.rect.left = 0
+
+        if self.rect.right > SCREEN_WIDTH:
+
+            self.rect.right = SCREEN_WIDTH
+
+        if self.rect.top <= 0:
+
+            self.rect.top = 0
+
+        if self.rect.bottom >= SCREEN_HEIGHT:
+
+            self.rect.bottom = SCREEN_HEIGHT
 
 
 # Initialize pygame
@@ -182,7 +166,6 @@ while running:
 
             running = False
 
-        
         elif event.type == ADDENEMY:
 
             # Create the new enemy and add it to sprite groups
@@ -193,10 +176,8 @@ while running:
 
             all_sprites.add(new_enemy)
 
-
     # Fill the screen with black
 
-    
     screen.fill((0, 0, 0))
     for entity in all_sprites:
         screen.blit(entity.surf, entity.rect)
@@ -209,27 +190,22 @@ while running:
 
         running = False
 
-
     # Draw the player on the screen
-    
-
-    
 
     pressed_keys = pygame.key.get_pressed()
 
     player.update(pressed_keys)
     enemies.update()
-   
+
     screen.blit(player.surf, player.rect)
     score += 1
 
-    #show score
-    font = pygame.font.Font('freesansbold.ttf', 32)
-    text = font.render('Score: ' + str(score), True, (255, 255, 255))
+    # show score
+    font = pygame.font.Font("freesansbold.ttf", 32)
+    text = font.render("Score: " + str(score), True, (255, 255, 255))
     textRect = text.get_rect()
     textRect.center = (400, 50)
     screen.blit(text, textRect)
-
 
     # Update the display
     clock = pygame.time.Clock()
@@ -238,17 +214,17 @@ while running:
     pygame.display.flip()
 
 
-#set screen to black
+# set screen to black
 screen.fill((0, 0, 0))
-#show score
-font = pygame.font.Font('freesansbold.ttf', 32)
-text = font.render('Score: ' + str(score), True, (255, 255, 255))
+# show score
+font = pygame.font.Font("freesansbold.ttf", 32)
+text = font.render("Score: " + str(score), True, (255, 255, 255))
 textRect = text.get_rect()
 textRect.center = (400, 50)
 screen.blit(text, textRect)
-#update display
+# update display
 pygame.display.flip()
-#wait 3 seconds
+# wait 3 seconds
 time.sleep(3)
-#quit
+# quit
 print(score)
