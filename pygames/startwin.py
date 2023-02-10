@@ -1,12 +1,13 @@
 import pygame
 import random
-
+import time
+score = 0
 # Import pygame.locals for easier access to key coordinates
 
 # Updated to conform to flake8 and black standards
 
 from pygame.locals import (
-
+    RLEACCEL,
     K_UP,
 
     K_DOWN,
@@ -31,6 +32,8 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
 
+
+
 class Enemy(pygame.sprite.Sprite):
 
     def __init__(self):
@@ -39,7 +42,7 @@ class Enemy(pygame.sprite.Sprite):
 
         self.surf = pygame.Surface((20, 10))
 
-        self.surf.fill((255, 255, 255))
+        self.surf.fill((255, 100, 150))
 
         self.rect = self.surf.get_rect(
 
@@ -78,10 +81,11 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
 
         super(Player, self).__init__()
-
+        #self.surf = pygame.image.load("jet.png").convert()
+        #self.surf.set_colorkey((255, 255, 255), RLEACCEL)
         self.surf = pygame.Surface((75, 25))
 
-        self.surf.fill((255, 255, 255))
+        self.surf.fill((200, 255, 200))
 
         self.rect = self.surf.get_rect()
 
@@ -177,6 +181,7 @@ while running:
         elif event.type == QUIT:
 
             running = False
+
         
         elif event.type == ADDENEMY:
 
@@ -196,6 +201,15 @@ while running:
     for entity in all_sprites:
         screen.blit(entity.surf, entity.rect)
 
+    if pygame.sprite.spritecollideany(player, enemies):
+
+        # If so, then remove the player and stop the loop
+
+        player.kill()
+
+        running = False
+
+
     # Draw the player on the screen
     
 
@@ -207,7 +221,34 @@ while running:
     enemies.update()
    
     screen.blit(player.surf, player.rect)
+    score += 1
+
+    #show score
+    font = pygame.font.Font('freesansbold.ttf', 32)
+    text = font.render('Score: ' + str(score), True, (255, 255, 255))
+    textRect = text.get_rect()
+    textRect.center = (400, 50)
+    screen.blit(text, textRect)
+
 
     # Update the display
+    clock = pygame.time.Clock()
+    clock.tick(60)
 
     pygame.display.flip()
+
+
+#set screen to black
+screen.fill((0, 0, 0))
+#show score
+font = pygame.font.Font('freesansbold.ttf', 32)
+text = font.render('Score: ' + str(score), True, (255, 255, 255))
+textRect = text.get_rect()
+textRect.center = (400, 50)
+screen.blit(text, textRect)
+#update display
+pygame.display.flip()
+#wait 3 seconds
+time.sleep(3)
+#quit
+print(score)
