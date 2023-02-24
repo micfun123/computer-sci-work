@@ -19,6 +19,32 @@ def printInorder(root):
         # now recur on right child
         printInorder(root.right)
 
+def printPostorder(root):
+
+    if root:
+
+        # First recur on left child
+        printPostorder(root.left)
+
+        # the recur on right child
+        printPostorder(root.right)
+
+        # now print the data of node
+        print(root.val),
+
+def printPreorder(root):
+    
+        if root:
+    
+            # First print the data of node
+            print(root.val),
+    
+            # Then recur on left child
+            printPreorder(root.left)
+    
+            # Finally recur on right child
+            printPreorder(root.right)
+
 
 root = Node("Banana")
 root.left = Node("apple")
@@ -28,10 +54,8 @@ root.left.right = Node("Van")
 # Function call
 print("\nInorder traversal of binary tree is")
 printInorder(root)
+print("\nPostorder traversal of binary tree is")
+printPostorder(root)
+print("\nPreorder traversal of binary tree is")
+printPreorder(root)
 
-nodes = []
-while True:
-    print("1. Add a node")
-    print("2. Print the tree")
-    print("4. Exit")
-    choice = input("Enter your choice: ")
