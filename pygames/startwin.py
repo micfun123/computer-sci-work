@@ -1,6 +1,7 @@
 import pygame
 import random
 import time
+import json
 
 score = 0
 
@@ -224,6 +225,16 @@ textRect.center = (400, 50)
 screen.blit(text, textRect)
 # update display
 pygame.display.flip()
+#enter a username
+font = pygame.font.Font("freesansbold.ttf", 32)
+text = font.render("Enter your username: ", True, (255, 255, 255))
+textRect = text.get_rect()
+textRect.center = (400, 150)
+screen.blit(text, textRect)
+pygame.display.flip()
+# get user input
+username = input("Enter your username: ")
+
 # wait 3 seconds
 time.sleep(3)
 # quit
