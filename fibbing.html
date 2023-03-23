@@ -6,6 +6,27 @@
     <title>fibonacci</title>
 </head>
 <body>
+    <h1>Fibonacci</h1>
+    <p>Enter a number to see the fibonacci sequence up to that number</p>
+    <form>
+        <input type="number" name="number" id="number">
+        <input type="submit" value="Submit" onclick="fibbing()">
+    </form>
+    <p id="result"></p>
+    <script>
+        function fibbing() {
+            let number = document.getElementById("number").value;
+            let result = document.getElementById("result");
+            let fib = [0, 1];
+            for (let i = 2; i <= number; i++) {
+                fib[i] = fib[i - 2] + fib[i - 1];
+            }
+            document.write(fib);
+            
+        }
+    </script>
+
+
     
 </body>
 </html>
