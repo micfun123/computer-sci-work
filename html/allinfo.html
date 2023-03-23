@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This site shows all the information a site can get from your computer</title>
+    <script>
+    var screen = window.screen;
+    var width = screen.width;
+    var height = screen.height;
+    document.write("Screen width: " + width + "<br>");
+    document.write("Screen height: " + height + "<br>");
+    var coulors = screen.colorDepth;
+    document.write("Screen coulors: " + coulors + "<br>");
+    var availWidth = screen.availWidth;
+    var availHeight = screen.availHeight;
+    document.write("Screen available width: " + availWidth + "<br>");
+    document.write("Screen available height: " + availHeight + "<br>");
+    var pastsite = document.referrer;
+    if (pastsite == "") {
+        pastsite = "No site";
+    }
+    document.write("The site you came from: " + pastsite + "<br>");
+    var cookies_amount = navigator.cookieEnabled;
+    if (cookies_amount == true) {
+        cookies_amount = "Enabled";
+    } else {
+        cookies_amount = "Disabled";
+    }
+    document.write("Cookies: " + cookies_amount + "<br>");
+    var browser = navigator.appName;
+    document.write("Browser: " + browser + "<br>");
+    var browser_version = navigator.appVersion;
+    document.write("Browser version: " + browser_version + "<br>");
+    var browser_language = navigator.language;
+    document.write("Browser language: " + browser_language + "<br>");
+    
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
