@@ -1,0 +1,60 @@
+<html>
+
+
+
+<head>
+<script>
+function bigger() {
+    num1 = document.forms["myForm"]["num1"].value;
+    num2 = document.forms["myForm"]["num2"].value;
+    
+    // Work out which number is bigger
+    // Use if... else to do this.
+    if (num1 > num2) {
+        document.getElementById("answer").innerHTML = num1 + " is bigger than " + num2;
+    } 
+    else if(num2 > num1)
+    {
+        document.getElementById("answer").innerHTML = num2 + " is bigger than " + num1;
+    } 
+    else{
+        document.getElementById("answer").innerHTML = num2 + " it the same as " + num1;
+    }
+}
+
+</script>
+
+ 
+
+</head>
+
+ 
+
+<body>
+<h1>The Astonishing Bigger Number Calculator</h1>
+<h3> Enter 2 numbers...</h3>
+<form name="myForm">
+    Number 1
+    <input type = "input" id="num1" name="num1">
+    <br>
+    Number 2
+    <input type = "input" id="num2" name="num2">
+    <br>
+    <br>
+    <input type="button" value="Which number is bigger?"
+    onclick="bigger()">
+    
+    </form>
+
+ 
+
+<p id="answer"></p>
+
+ 
+
+</body>
+
+ 
+
+
+</html>
