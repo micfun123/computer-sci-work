@@ -1,10 +1,11 @@
 # p^n + 3600 = m^2
+# p is prime , n and m are integers
 
 tosolve = 200
 
 solution = []
 
-#find p n and m. P is a prime
+
 
 def isprime(n):
     if n == 1:
