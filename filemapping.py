@@ -13,14 +13,12 @@ overlap = 50
 
 # Set the base directory for the search
 base_dir = input("Enter the base directory path: ")
-#make file output_file 
-output_file = input("Enter the output file name: ")
-try :
-    os.mkdir(output_file)
-except FileExistsError:
-    print("File already exist")
+output_folder = "output_folder"
 
+if not os.path.exists(output_folder):
+    os.mkdir(output_folder)
 
+    
 
 # Initialize the x and y coordinates
 x, y = 0, 0
@@ -47,36 +45,52 @@ for root, dirs, files in os.walk(base_dir):
     # Check if the current directory fits in the current image
     if y + total_height > image_height:
         # Save the current image and increment the image counter
-        current_image.save(output_file + f"/directory_tree_{image_num}.png")
-        image_num += 1
+        current_image.save(f"directory_tree_{image_num}.png")
 
         # Initialize a new image and draw object
         current_image = Image.new('RGB', (image_width, image_height), color='white')
         draw = ImageDraw.Draw(current_image)
 
-        # Reset the y coordinate
-        y = 0
+        # Reset the x and y coordinates
+        x, y = 0, 0
 
-    # Add the directory name to the current image
-    dir_name = os.path.basename(root)
-    dir_width, dir_height = draw.textsize(dir_name, font=font)
-    draw.text((x, y), f"└── {dir_name}", fill='black', font=font)
-    y += dir_height
+        # Increment the image counter
+        image_num += 1
 
     # Draw the files in the current directory
     for file in files:
         text_width, text_height = draw.textsize(file, font=font)
-        draw.text((x + overlap, y), f"├── {file}", fill='black', font=font)
+        draw.text((x, y), file, fill='black', font=font)
         y += text_height
 
-    # Add an arrow to the end of the directory name
-    if dirs:
-        arrow_width, arrow_height = draw.textsize("└──", font=font)
-        draw.text((x + arrow_width, y - dir_height), "└──►", fill='black', font=font)
+    # Add the directory name to the current image
+    dir_name = os.path.basename(root)
+    dir_width, dir_height = draw.textsize(dir_name, font=font)
+    draw.text((x, y), f"-> {dir_name}", fill='black', font=font)
+    y += dir_height
 
-    # Update the y coordinate
-    y += overlap
+    # Draw the arrow pointing to the next level
+    arrow_start_x = x + dir_width + overlap
+    arrow_start_y = y - dir_height
+    arrow_end_x = arrow_start_x + overlap
+    arrow_end_y = arrow_start_y + dir_height
+    draw.line((arrow_start_x, arrow_start_y, arrow_end_x, arrow_end_y), fill='black', width=1)
 
-# Save the last image to the output folder
-current_image.save(output_file + f"/directory_tree_{image_num}.png")
+    # Update the x and y coordinates
+    x = arrow_end_x + overlap
+    y = arrow_end_y - dir_height
 
+# Save the last image
+current_image.save(f"directory_tree_{image_num}.png")
+
+# Merge all the images into a single image
+images = []
+for filename in os.listdir():
+    if filename.startswith('directory_tree_') and filename.endswith('.png'):
+        images.append(Image.open(filename))
+
+merged_image = Image.new('RGB', (image_width, image_height * len(images)), color='white')
+y_offset = 0
+for image in images:
+    merged_image.paste(image, (0, y_offset))
+    y
