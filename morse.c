@@ -5,12 +5,11 @@
 int main(){
 
     char messageout[100];
-    char messagein[100];
     char Morse[26][5] = {".-","-...","-.-.","-..",".","..-.","--.","....","..",
                          ".---","-.-",".-..","--","-.","---",".--.","--.-",".-.",
                          "...","-","..-","...-",".--","-..-","-.--","--.."};
     printf("What is your message: ");
-    scanf("%s",messageout);
+    gets(messageout);
 
     for (int i = 0; i < 100; i++)
     {
@@ -20,12 +19,15 @@ int main(){
         }
         else
         {
-            int j = messageout[i] - 97;
-            printf("%s ",Morse[j]);
-            
+            if ((messageout[i] > 96) && (messageout[i] < 123))
+            {
+                int j = messageout[i] - 97;
+                printf("%s ",Morse[j]);
+            }
+            else{
+                printf("%c ",messageout[i]);
+            }
         }
     }
-
-
 
 }
