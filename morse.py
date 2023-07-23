@@ -20,7 +20,10 @@ CODE = {'A': '.-',     'B': '-...',   'C': '-.-.',
 messagein = input("enter a sentace: ")
 messagein = messagein.upper()
 for i in messagein:
-    x = CODE[i]
+    try:
+        x = CODE[i]
+    except:
+        x = ''
     messageout.append(x)
     
 print("".join(messageout))
