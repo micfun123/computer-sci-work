@@ -1,6 +1,6 @@
 string = "cccaab"
 
-def rle(string):
+def rle_encoder(string):
     """
     rle(cccaab) -> c3a2b1
     """
@@ -15,4 +15,16 @@ def rle(string):
     result += string[i] + str(count)
     return result
 
-print(rle(string))
+def rle_decoder(string):
+    """
+    rle(c3a2b1) -> cccaab
+    """
+    result = ""
+    for i in range(0,len(string),2):
+        result += string[i] * int(string[i+1])
+    return result
+
+
+print(rle_encoder(string))
+print(rle_decoder(rle_encoder(string)))
+
