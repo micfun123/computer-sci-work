@@ -16,7 +16,7 @@
 def longestCommonPrefix(strs):
     common = ""
     if len(strs) == 0:
-        return common
+        return
     for letter in range(len(strs[0])):
         for word in range(1, len(strs)):
             if letter >= len(strs[word]) or strs[0][letter] != strs[word][letter]:
@@ -25,3 +25,5 @@ def longestCommonPrefix(strs):
         
 
 print(longestCommonPrefix(["flower","flow","flight"]))
+print(longestCommonPrefix(["a","w","q"]))
+print(longestCommonPrefix(["","",""]))
