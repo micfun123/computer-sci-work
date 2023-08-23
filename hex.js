@@ -7,13 +7,14 @@ function tohex(num)
     {
         if (num % 16 > 9)
         {
-            hex.append(String.fromCharCode(55 + num % 16));
+            hex.push(String.fromCharCode(55 + num % 16));
         }
         else
         {
-            hex.append(num % 16);
+            hex.push(num % 16);
         }
         num = Math.floor(num / 16);
     }
     return hex.reverse().join("");
-    }
+}
+console.log(tohex(20))
