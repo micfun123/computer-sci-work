@@ -17,4 +17,4 @@ function tohex(num)
     }
     return hex.reverse().join("");
 }
-console.log(tohex(20))
+console.log(tohex(20));
