@@ -32,3 +32,4 @@ void bubble(int *array, int size){
 void main(){
     bubble(data, sizeof(data)/sizeof(data[0]));
 }
+
