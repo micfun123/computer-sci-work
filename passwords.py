@@ -1,10 +1,11 @@
 import random
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-pw_length = 12
-mypw = ""
 
 def pw_gen():
+    
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    pw_length = 12
+    mypw = ""
     for i in range(pw_length):
         next_index = random.randrange(len(alphabet))
         mypw = mypw + alphabet[next_index]
