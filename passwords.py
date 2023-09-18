@@ -24,5 +24,6 @@ def pw_gen():
         replace_index = random.randrange(len(mypw)//2,len(mypw))
         mypw = mypw[0:replace_index] + random.choice(punctuation) + mypw[replace_index+1:]
 
-print(mypw)
+    print(mypw)
 
+pw_gen()
