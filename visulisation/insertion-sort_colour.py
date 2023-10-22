@@ -1,3 +1,4 @@
+
 from PIL import Image, ImageDraw, ImageFont
 import random
 
@@ -46,22 +47,26 @@ def visualize_array(arr, step):
 
     return image
 
-# Bubble Sort Algorithm
-def bubble_sort(arr):
-    frames = []
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-                frames.append(visualize_array(arr, len(frames)))
 
+def Insertion_Sort(arr):
+    frames = []
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        while j >=0 and key < arr[j] :
+                arr[j+1] = arr[j]
+                j -= 1
+        arr[j+1] = key
+        frames.append(visualize_array(arr, len(frames)))
     return frames
 
+
 # Create a GIF of the Bubble Sort process
-frames = bubble_sort(arr)
+frames = Insertion_Sort(arr)
 
 # Save the frames as a GIF
-frames[0].save("bubble_sort_animation_colour.gif", save_all=True, append_images=frames[1:], duration=frame_duration, loop=0)
+frames[0].save("Insertion_Sort_animation_colour.gif", save_all=True, append_images=frames[1:], duration=frame_duration, loop=0)
 #save last frame as png
+frames[-1].save("Insertion_Sort_animation_colour.png")
+
 print("Done!")
