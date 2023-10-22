@@ -64,4 +64,6 @@ frames = bubble_sort(arr)
 # Save the frames as a GIF
 frames[0].save("bubble_sort_animation_colour.gif", save_all=True, append_images=frames[1:], duration=frame_duration, loop=0)
 #save last frame as png
+frames[-1].save("bubble_sort_final_frame.png")
+
 print("Done!")
