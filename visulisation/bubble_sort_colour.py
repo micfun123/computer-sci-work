@@ -1,6 +1,5 @@
-from PIL import Image, ImageDraw,ImageFont
+from PIL import Image, ImageDraw, ImageFont
 import random
-
 
 # Parameters for the animation
 num_elements = 50
@@ -10,6 +9,14 @@ frame_duration = 50  # in milliseconds
 # Generate random initial array
 arr = [random.randint(1, 100) for _ in range(num_elements)]
 max_value = max(arr)
+
+# Function to generate a color gradient
+def gradient_color(current, total):
+    # Create a gradient from red to green
+    r = int(255 * (1 - current / total))
+    g = int(255 * (current / total))
+    b = 0
+    return (r, g, b)
 
 # Function to visualize the array as an image
 def visualize_array(arr, step):
@@ -23,7 +30,8 @@ def visualize_array(arr, step):
         x1 = x0 + bar_width
         y0 = height - val
         y1 = height
-        draw.rectangle([x0, y0, x1, y1], outline=(0, 0, 0), width=2)
+        color = gradient_color(i, num_elements)
+        draw.rectangle([x0, y0, x1, y1], fill=color, outline=(0, 0, 0), width=2)
 
     # Add step information at the bottom, scaled proportionally
     step_text = f"Step {step + 1}"
@@ -36,7 +44,6 @@ def visualize_array(arr, step):
 
     return image
 
-
 # Bubble Sort Algorithm
 def bubble_sort(arr):
     frames = []
@@ -46,12 +53,12 @@ def bubble_sort(arr):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
                 frames.append(visualize_array(arr, len(frames)))
-    
+
     return frames
 
 # Create a GIF of the Bubble Sort process
 frames = bubble_sort(arr)
 
 # Save the frames as a GIF
-frames[0].save("bubble_sort_animation.gif", save_all=True, append_images=frames[1:], duration=frame_duration, loop=0)
+frames[0].save("bubble_sort_animation_colour.gif", save_all=True, append_images=frames[1:], duration=frame_duration, loop=0)
 print("Done!")
