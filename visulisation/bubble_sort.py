@@ -3,7 +3,7 @@ import random
 
 
 # Parameters for the animation
-num_elements = 100
+num_elements = 500
 bar_width = 20
 frame_duration = 50  # in milliseconds
 
@@ -14,7 +14,7 @@ max_value = max(arr)
 # Function to visualize the array as an image
 def visualize_array(arr, step):
     width = num_elements * bar_width
-    height = max_value + 60  # Add extra space for labels and step information
+    height = max_value + 250  # Add extra space for labels and step information
     image = Image.new("RGB", (width, height), (255, 255, 255))
     draw = ImageDraw.Draw(image)
 
@@ -27,11 +27,11 @@ def visualize_array(arr, step):
 
     # Add step information at the bottom, scaled proportionally
     step_text = f"Step {step + 1}"
-    step_font_size = max(12, int((width / 10)))  # Adjust the 10 based on your preferences
+    step_font_size = max(12, int((width / 20)))  # Adjust the 10 based on your preferences
     step_font = ImageFont.truetype("arial.ttf", step_font_size)  # You can specify a different font
     text_width, text_height = draw.textsize(step_text, font=step_font)
     text_x = (width - text_width) // 2
-    text_y = height - text_height - 10
+    text_y = height - text_height - 150
     draw.text((text_x, text_y), step_text, fill=(0, 0, 0), font=step_font)
 
     return image
