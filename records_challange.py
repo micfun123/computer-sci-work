@@ -5,6 +5,7 @@ currentid = 0
 
 sale = namedtuple("sale", "ID First_name Surname age Gender Product Price")
 
+
 def newsale():
     global currentid
     global sales
@@ -14,18 +15,17 @@ def newsale():
     gender = input("enter your gender: ")
     product = input("enter your product: ")
     price = float(input("enter your price: "))
-    #add to list
+    # add to list
     currentid += 1
-    sales.append(
-        sale(
-            currentid, firstname,surname,age,gender,product,price
-    ))
+    sales.append(sale(currentid, firstname, surname, age, gender, product, price))
+
 
 def view():
     for i in sales:
         print(i)
 
-#menu
+
+# menu
 while True:
     print("1. New sale")
     print("2. View sales")
