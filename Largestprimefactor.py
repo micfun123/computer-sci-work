@@ -1,4 +1,4 @@
-#The prime factors of 13195 are 5, 7, 13 and 29. target 600851475143
+# The prime factors of 13195 are 5, 7, 13 and 29. target 600851475143
 
 number = int(input("Enter a number: "))
 primefactors = []

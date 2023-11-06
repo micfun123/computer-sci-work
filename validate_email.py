@@ -1,6 +1,28 @@
 import re
 
-banned_char = ["!", "#", "$", "%", "&", "'", "*", "+", "-", "/", "=", "?", "^", "_", "`", "{", "|", "}", "~", " "]
+banned_char = [
+    "!",
+    "#",
+    "$",
+    "%",
+    "&",
+    "'",
+    "*",
+    "+",
+    "-",
+    "/",
+    "=",
+    "?",
+    "^",
+    "_",
+    "`",
+    "{",
+    "|",
+    "}",
+    "~",
+    " ",
+]
+
 
 def email_check(email):
     if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
@@ -11,7 +33,6 @@ def email_check(email):
         if char in email:
             return False
     return True
-    
+
 
 print(email_check(""))
-

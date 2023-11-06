@@ -1,5 +1,6 @@
 tree = {}
 
+
 def add_node(node, parent=None):
     if parent is None:
         tree[node] = None
@@ -8,7 +9,6 @@ def add_node(node, parent=None):
     item = input("Enter a child node (or nothing to stop): ")
     if item != "":
         add_node(item, node)
-
 
 
 def print_tree(node, level=0):

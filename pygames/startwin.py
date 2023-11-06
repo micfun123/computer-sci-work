@@ -28,7 +28,6 @@ SCREEN_HEIGHT = 600
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
-
         super(Enemy, self).__init__()
 
         self.surf = pygame.Surface((20, 10))
@@ -49,11 +48,9 @@ class Enemy(pygame.sprite.Sprite):
     # Remove the sprite when it passes the left edge of the screen
 
     def update(self):
-
         self.rect.move_ip(-self.speed, 0)
 
         if self.rect.right < 0:
-
             self.kill()
 
 
@@ -64,7 +61,6 @@ class Enemy(pygame.sprite.Sprite):
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
-
         super(Player, self).__init__()
         # self.surf = pygame.image.load("jet.png").convert()
         # self.surf.set_colorkey((255, 255, 255), RLEACCEL)
@@ -75,39 +71,30 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.surf.get_rect()
 
     def update(self, pressed_keys):
-
         if pressed_keys[K_UP]:
-
             self.rect.move_ip(0, -5)
 
         if pressed_keys[K_DOWN]:
-
             self.rect.move_ip(0, 5)
 
         if pressed_keys[K_LEFT]:
-
             self.rect.move_ip(-5, 0)
 
         if pressed_keys[K_RIGHT]:
-
             self.rect.move_ip(5, 0)
 
         # Keep player on the screen
 
         if self.rect.left < 0:
-
             self.rect.left = 0
 
         if self.rect.right > SCREEN_WIDTH:
-
             self.rect.right = SCREEN_WIDTH
 
         if self.rect.top <= 0:
-
             self.rect.top = 0
 
         if self.rect.bottom >= SCREEN_HEIGHT:
-
             self.rect.bottom = SCREEN_HEIGHT
 
 
@@ -146,29 +133,23 @@ running = True
 
 
 while running:
-
     # for loop through the event queue
 
     for event in pygame.event.get():
-
         # Check for KEYDOWN event
 
         if event.type == KEYDOWN:
-
             # If the Esc key is pressed, then exit the main loop
 
             if event.key == K_ESCAPE:
-
                 running = False
 
         # Check for QUIT event. If QUIT, then set running to false.
 
         elif event.type == QUIT:
-
             running = False
 
         elif event.type == ADDENEMY:
-
             # Create the new enemy and add it to sprite groups
 
             new_enemy = Enemy()
@@ -184,7 +165,6 @@ while running:
         screen.blit(entity.surf, entity.rect)
 
     if pygame.sprite.spritecollideany(player, enemies):
-
         # If so, then remove the player and stop the loop
 
         player.kill()
@@ -225,7 +205,7 @@ textRect.center = (400, 50)
 screen.blit(text, textRect)
 # update display
 pygame.display.flip()
-#enter a username
+# enter a username
 font = pygame.font.Font("freesansbold.ttf", 32)
 text = font.render("Enter your username: ", True, (255, 255, 255))
 textRect = text.get_rect()

@@ -1,4 +1,3 @@
-
 def timestable():
     x = int(input(" Please enter the times table you want to know: "))
     for i in range(12):
@@ -6,12 +5,14 @@ def timestable():
     print()
     main()
 
+
 def vat():
     x = float(input(" Please enter price so vat can be added: "))
-    x = x + x*0.2
+    x = x + x * 0.2
     print(f" Your price with vat is now {x}")
     print()
     main()
+
 
 def taxs():
     x = float(input("Enter your salary"))
@@ -26,12 +27,15 @@ def taxs():
         print()
     main()
 
+
 def main():
-    print("""
+    print(
+        """
     press 1 for times tables
     press 2 for vat calc
     press 3 for taxs calc
-    """)
+    """
+    )
     option = int(input())
     if option == 1:
         timestable()
@@ -42,5 +46,6 @@ def main():
     else:
         print("please enter a valid input")
         main()
+
 
 main()

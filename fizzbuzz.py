@@ -5,7 +5,7 @@ def fizzBuzz(n: int):
     output = []
     string = ""
     if n % 3 == 0:
-        string = string + "Fizz" 
+        string = string + "Fizz"
     if n % 5 == 0:
         string = string + "Buzz"
     if string == "":

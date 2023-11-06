@@ -1,5 +1,6 @@
 from math import comb
 
+
 def binomial_expansion(expression, power):
     result = ""
     for k in range(power + 1):
@@ -10,8 +11,9 @@ def binomial_expansion(expression, power):
         result += f"{term} * {expression[2]}^{power - k} * {expression[3]}^{k} + "
     return result[:-3]  # Remove the extra "+ " at the end
 
+
 # Test the function
-expression = [1,2, "x", "y"]
+expression = [1, 2, "x", "y"]
 power = 5
 expansion = binomial_expansion(expression, power)
 print(expansion)

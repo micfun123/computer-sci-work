@@ -8,6 +8,7 @@ graph = {
     "F": {"D": 6},
 }
 
+
 # dijkstra's algorithm
 def dijkstra(graph, start, goal):
     shortest_distance = {}

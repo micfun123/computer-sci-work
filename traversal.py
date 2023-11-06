@@ -4,15 +4,14 @@ class Node:
         self.right = None
         self.val = key
 
-#store all nodes in a form of list
+
+# store all nodes in a form of list
 nodes = {}
 
 
 # A function to do inorder tree traversal
 def printInorder(root):
-
     if root:
-
         # First recur on left child
         printInorder(root.left)
 
@@ -24,9 +23,7 @@ def printInorder(root):
 
 
 def printPostorder(root):
-
     if root:
-
         # First recur on left child
         printPostorder(root.left)
 
@@ -38,9 +35,7 @@ def printPostorder(root):
 
 
 def printPreorder(root):
-
     if root:
-
         # First print the data of node
         print(root.val),
 
@@ -66,14 +61,13 @@ def insert(root, node):
             else:
                 insert(root.left, node)
 
+
 def binnary_tree_show(root):
     print(root.val)
     if root.left is not None:
         binnary_tree_show(root.left)
     if root.right is not None:
         binnary_tree_show(root.right)
-
-
 
 
 while True:
@@ -106,7 +100,6 @@ while True:
             print(i)
     elif choice == "5":
         binnary_tree_show(root)
-        
+
     else:
         print("Invalid choice")
-                

@@ -1,4 +1,3 @@
-
 sitename = "www.orc.org"
 
 
@@ -11,5 +10,6 @@ def hasher(site):
     for i in site:
         total += i
     return total
+
 
 print(hasher(sitename))

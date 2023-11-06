@@ -1,5 +1,6 @@
 raw_num = int(input("Enter a number: "))
 
+
 def tohex(num):
     hex = []
     while num > 0:
@@ -9,8 +10,9 @@ def tohex(num):
             hex.append(num % 16)
         num = num // 16
     hex = hex[::-1]
-    hex = ''.join(hex)
-    hex = "Ox"+hex
+    hex = "".join(hex)
+    hex = "Ox" + hex
     return hex
+
 
 print(tohex(raw_num))

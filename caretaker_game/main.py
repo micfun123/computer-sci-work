@@ -1,5 +1,3 @@
-
-
 class Critter(object):
     """Makes a virtual pet"""
 
@@ -20,7 +18,6 @@ class Critter(object):
         else:
             self.__name = new_name
             print("Name changed.")
-
 
     def __init__(self, name):
         self.name = name
@@ -63,10 +60,11 @@ class Critter(object):
         rep = "Critter object"
         rep += "name: " + self.name + "\n"
         return rep
-    
+
     def talk(self):
         print("Hi, I'm", self.name, "and I feel", self.mood, "now.\n")
         self.__pass_time()
+
 
 crit = Critter(str(input("Enter a name for your critter: ")))
 farmcrits = []
@@ -116,7 +114,7 @@ while chosen != "0":
     elif chosen == "8":
         for i in farmcrits:
             print(i)
-                
+
     else:
         print("Sorry, but", chosen, "isn't a valid choice.")
 

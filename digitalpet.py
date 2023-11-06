@@ -2,8 +2,6 @@ from random import choices
 from ssl import Options
 
 
-
-
 class pet:
     def __init__(self, name: str, type: str, age: int):
         self.name = name
@@ -21,6 +19,3 @@ class pet:
 pet.name = input("Enter a pets name")
 pet.type = input("Enter a pets type")
 pet.age = 0
-
-
-

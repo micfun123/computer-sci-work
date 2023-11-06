@@ -1,5 +1,6 @@
 import numpy as np
-a = np.array([1,2,3,4])
+
+a = np.array([1, 2, 3, 4])
 print(np.where(a > 3))
 print(len(np.where(a > 3)))
 # Output:
@@ -7,7 +8,8 @@ print(len(np.where(a > 3)))
 #   1
 
 import numpy as np
-a = np.array([1,2,3,4])
+
+a = np.array([1, 2, 3, 4])
 print(np.where(a > 2)[0])
 print(len(np.where(a > 2)[0]))
 # Output:

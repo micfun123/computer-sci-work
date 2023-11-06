@@ -8,7 +8,7 @@ def compress_via_dictionary(str) -> str:
     Words = []
     str = str.lower()
     for i in string.punctuation:
-        str = str.replace(i, '')
+        str = str.replace(i, "")
     for i in str.split():
         if i in Words:
             pass
@@ -16,10 +16,10 @@ def compress_via_dictionary(str) -> str:
             Words.append(i)
     for j in str.split():
         istringids.append(Words.index(j))
-    return istringids , Words
-    
+    return istringids, Words
 
-def extract_via_dictionary(idarray,wordarray) -> dict:
+
+def extract_via_dictionary(idarray, wordarray) -> dict:
     sentance = []
     print(idarray)
     for i in idarray:
@@ -27,6 +27,8 @@ def extract_via_dictionary(idarray,wordarray) -> dict:
         sentance.append(wordarray[i])
 
     return " ".join(sentance)
-        #get last word id and add a new id
-ids,words = compress_via_dictionary(userinpute)
-print(extract_via_dictionary(ids,words))
+    # get last word id and add a new id
+
+
+ids, words = compress_via_dictionary(userinpute)
+print(extract_via_dictionary(ids, words))

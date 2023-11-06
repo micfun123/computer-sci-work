@@ -1,10 +1,11 @@
 keyword = str(input("Enter your key word: "))
 phrase = str(input("Enter your phrase: "))
 
+
 def encript_keyword_cipher(keyword, phrase):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     keyword = keyword.lower()
-    keyword = keyword.replace(" ","")
+    keyword = keyword.replace(" ", "")
     phrase = phrase.lower()
     key = ""
     for letter in keyword:
@@ -13,7 +14,7 @@ def encript_keyword_cipher(keyword, phrase):
     for letter in alphabet:
         if letter not in key:
             key += letter
-    cipher = "" 
+    cipher = ""
     for letter in phrase:
         if letter in alphabet:
             cipher += key[alphabet.index(letter)]
@@ -22,10 +23,11 @@ def encript_keyword_cipher(keyword, phrase):
 
     return str(cipher)
 
-def dencript_keyword_cipher(keyword,cipher):
+
+def dencript_keyword_cipher(keyword, cipher):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     keyword = keyword.lower()
-    keyword = keyword.replace(" ","")
+    keyword = keyword.replace(" ", "")
     cipher = cipher.lower()
     key = ""
     for letter in keyword:
@@ -43,9 +45,6 @@ def dencript_keyword_cipher(keyword,cipher):
     return phrase
 
 
-print(encript_keyword_cipher(keyword,phrase))
-code = encript_keyword_cipher(keyword,phrase)
-print(dencript_keyword_cipher(keyword,code))
-
-
-
+print(encript_keyword_cipher(keyword, phrase))
+code = encript_keyword_cipher(keyword, phrase)
+print(dencript_keyword_cipher(keyword, code))

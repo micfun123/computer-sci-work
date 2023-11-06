@@ -1,11 +1,12 @@
-array = [20,2,6,12,8]
+array = [20, 2, 6, 12, 8]
+
 
 def calculate(array):
     total = 0
     add = True
     top = len(array)
     if top == 0:
-        return ("Stack is empty")
+        return "Stack is empty"
     else:
         total = array[top - 1]
         print(total)
@@ -22,6 +23,6 @@ def calculate(array):
                 add = True
             top = top - 1
         return total
-    
-print(calculate(array))
 
+
+print(calculate(array))

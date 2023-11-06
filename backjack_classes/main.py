@@ -1,16 +1,16 @@
-
 import random
 
-#currentdeck = []
-#pastcards = []
-#playerhand = []
-#dealerhand = []
-#playerhandvalue = 0
-#dealerhandvalue = 0
-#playerhandaces = 0
-#dealerhandaces = 0
-#playermoney = 100
-#bet = 0
+# currentdeck = []
+# pastcards = []
+# playerhand = []
+# dealerhand = []
+# playerhandvalue = 0
+# dealerhandvalue = 0
+# playerhandaces = 0
+# dealerhandaces = 0
+# playermoney = 100
+# bet = 0
+
 
 class Card(object):
     def __init__(self, suit, value):
@@ -19,6 +19,7 @@ class Card(object):
 
     def __str__(self):
         return self.value + " of " + self.suit
+
 
 class Deck(object):
     def __init__(self):
@@ -37,7 +38,7 @@ class Deck(object):
         print("\n++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
     def shuffle(self):
-        for i in range(len(self.cards)-1, 0, -1):
+        for i in range(len(self.cards) - 1, 0, -1):
             r = random.randint(0, i)
             self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
 
@@ -46,7 +47,7 @@ class Deck(object):
 
 
 class player(object):
-    def __init__(self,player_money,deck) -> None:
+    def __init__(self, player_money, deck) -> None:
         self.hand = []
         self.total_count = 0
         self.money = int(player_money)
@@ -54,12 +55,11 @@ class player(object):
         for i in range(2):
             self.add_card(self.deck)
         self.show_hand()
-            
-    def add_card(self,deck):
+
+    def add_card(self, deck):
         self.hand.append(deck.drawCard())
         self.show_hand()
 
-        
     def show_hand(self):
         print("\n ===============================")
         for card in self.hand:
@@ -79,15 +79,13 @@ class player(object):
         self.total_count = val
         return val
 
+
 newdeck = Deck()
 newdeck.show()
 newdeck.shuffle()
 newdeck.show()
 
-michael = player(1000000000000,newdeck)
-gwyneth = player(2,newdeck)
+michael = player(1000000000000, newdeck)
+gwyneth = player(2, newdeck)
 michael.show_hand()
 michael.add_card(newdeck)
-
-
-

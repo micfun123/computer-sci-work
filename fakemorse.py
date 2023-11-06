@@ -1,80 +1,80 @@
 def morseEncode(x):
-     
     # refer to the Morse table
     # image attached in the article
-    if x is 'a':
+    if x is "a":
         return ".-"
-    elif x is 'b':
+    elif x is "b":
         return "-..."
-    elif x is 'c':
+    elif x is "c":
         return "-.-."
-    elif x is 'd':
+    elif x is "d":
         return "-.."
-    elif x is 'e':
+    elif x is "e":
         return "."
-    elif x is 'f':
+    elif x is "f":
         return "..-."
-    elif x is 'g':
+    elif x is "g":
         return "--."
-    elif x is 'h':
+    elif x is "h":
         return "...."
-    elif x is 'i':
+    elif x is "i":
         return ".."
-    elif x is 'j':
+    elif x is "j":
         return ".---"
-    elif x is 'k':
+    elif x is "k":
         return "-.-"
-    elif x is 'l':
+    elif x is "l":
         return ".-.."
-    elif x is 'm':
+    elif x is "m":
         return "--"
-    elif x is 'n':
+    elif x is "n":
         return "-."
-    elif x is 'o':
+    elif x is "o":
         return "---"
-    elif x is 'p':
+    elif x is "p":
         return ".--."
-    elif x is 'q':
+    elif x is "q":
         return "--.-"
-    elif x is 'r':
+    elif x is "r":
         return ".-."
-    elif x is 's':
+    elif x is "s":
         return "..."
-    elif x is 't':
+    elif x is "t":
         return "-"
-    elif x is 'u':
+    elif x is "u":
         return "..-"
-    elif x is 'v':
+    elif x is "v":
         return "...-"
-    elif x is 'w':
+    elif x is "w":
         return ".--"
-    elif x is 'x':
+    elif x is "x":
         return "-..-"
-    elif x is 'y':
+    elif x is "y":
         return "-.--"
-    elif x is 'z':
+    elif x is "z":
         return "--.."
-    elif x is '1':
-        return ".----";
-    elif x is '2':
-        return "..---";
-    elif x is '3':
-        return "...--";
-    elif x is '4':
-        return "....-";
-    elif x is '5':
-        return ".....";
-    elif x is '6':
-        return "-....";
-    elif x is '7':
-        return "--...";
-    elif x is '8':
-        return "---..";
-    elif x is '9':
-        return "----.";
-    elif x is '0':
-        return "-----";
- 
+    elif x is "1":
+        return ".----"
+    elif x is "2":
+        return "..---"
+    elif x is "3":
+        return "...--"
+    elif x is "4":
+        return "....-"
+    elif x is "5":
+        return "....."
+    elif x is "6":
+        return "-...."
+    elif x is "7":
+        return "--..."
+    elif x is "8":
+        return "---.."
+    elif x is "9":
+        return "----."
+    elif x is "0":
+        return "-----"
+
+
 s = input("Enter the text: ")
 for i in s:
     morseEncode(s)

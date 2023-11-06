@@ -1,5 +1,3 @@
-
-
 class Televition:
     def __init__(self):
         self.channel = int(1)
@@ -20,8 +18,6 @@ class Televition:
                 self.volume = 100
             else:
                 self.volume += amount
-        
-
 
     def volume_down(self, amount=1):
         if self.on:
@@ -29,7 +25,6 @@ class Televition:
                 print("Volume is at min")
             else:
                 self.volume -= amount
-        
 
     def channel_up(self, amount=1):
         if self.on:
@@ -37,7 +32,6 @@ class Televition:
                 self.channel = 999
             else:
                 self.channel += amount
-        
 
     def channel_down(self, amount=1):
         if self.on:
@@ -45,10 +39,10 @@ class Televition:
                 self.channel = 999
             else:
                 self.channel += amount
-    
 
     def __str__(self) -> str:
         return f"Channel: {self.channel} Volume: {self.volume} On: {self.on}"
+
 
 tv = Televition()
 tv.turn_on()
