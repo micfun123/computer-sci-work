@@ -42,6 +42,9 @@ void selectWord(){
     }
 
     printf("%s\n", letters);
+    printf("\n");
+    //print the word
+
 }
 
 //main function
@@ -49,6 +52,9 @@ void main(){
     srand(time(NULL));
     loadWords();
     selectWord();
+    //print the word
+    printf("Welcome to Wordle!\n");
+    printf("for testing purposes, the word is: %s\n", letters);
     while (attempts < 5 && solved == 0){
         printf("Guess a word: ");
         int correct = 0;

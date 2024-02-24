@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //set the paragraph to entered the data
+        function submit_data(){
+            if (document.querySelector('input[name="FirstN"]').value == "" || document.querySelector('input[name="LastN"]').value == "" | document.querySelector('input[name="Email"]').value == "" || document.querySelector('input[name="Date"]').value == "" || document.querySelector('textarea[name="Comment"]').value == ""){
+                //underline the empty fields 
+                if (document.querySelector('input[name="FirstN"]').value == ""){
+                    document.querySelector('input[name="FirstN"]').style.borderBottom = "2px solid red";
+                }
+                if (document.querySelector('input[name="LastN"]').value == ""){
+                    document.querySelector('input[name="LastN"]').style.borderBottom = "2px solid red";
+                }
+                if (document.querySelector('input[name="Email"]').value == ""){
+                    document.querySelector('input[name="Email"]').style.borderBottom = "2px solid red";
+                }
+                if (document.querySelector('input[name="Date"]').value == ""){
+                    document.querySelector('input[name="Date"]').style.borderBottom = "2px solid red";
+                }
+                if (document.querySelector('textarea[name="Comment"]').value == ""){
+                    document.querySelector('textarea[name="Comment"]').style.borderBottom = "2px solid red";
+                }
+                
+                alert("Please fill all the fields");
+                return;
+            }
+            else{
+                var first_name = document.querySelector('input[name="FirstN"]').value;
+                var last_name = document.querySelector('input[name="LastN"]').value;
+                var email= document.querySelector('input[name="Email"]').value;
+                var date = document.querySelector('input[name="Date"]').value;
+                var comment = document.querySelector('textarea[name="Comment"]').value;
+                
+
+                var out = document.getElementById("out");
+                out.innerHTML = "First Name: " + first_name + "<br>" + "Last Name: " + last_name + "<br>" + email + "<br>"+ "Date: " + date + "<br>" + "Comment: " + comment;
+            
+                alert("Thank you")
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <h1> Trip Feedback form</h1>
+    <form>
+        <input type="text" name="FirstN" placeholder="First Name" required><br><br>
+        <input type="text" name="LastN" placeholder="Last Name" required><br><br>
+        <input type="email" name="Email" placeholder="example@example.com"><br><br>
+        <input type="date" name="Date" placeholder="Date" required><br><br>
+        <textarea name="Comment" placeholder="Comment" cols="30" rows="10" required></textarea><br><br>
+    </form>
+    <button onclick="submit_data()">Submit</button>
+
+    <p id = "out"></p>
+
+</body>
+</html>
