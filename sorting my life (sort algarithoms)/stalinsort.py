@@ -9,8 +9,4 @@ def Stalin_sort(array):
             new_array.append(i)
     return new_array
 
-
-    
-
-
 print(Stalin_sort(datatosort))

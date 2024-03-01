@@ -25,9 +25,10 @@ def find_primes_palindromes(start, end):
             numbers.append(n)
 
 def main():
+    print("Starting...")
     start_time = time.time()
-    num_threads = 4  # Adjust the number of threads as needed
-    chunk_size = 250000000  # Splitting the range into equal chunks
+    num_threads = 5  # Adjust the number of threads as needed
+    chunk_size = 200000000  # Splitting the range into equal chunks
     threads = []
     for i in range(num_threads):
         start = i * chunk_size
