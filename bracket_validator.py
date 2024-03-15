@@ -1,16 +1,17 @@
-brackets = "({([])})"
+brackets = "()[]{}"
 
-def validate(str):
+def validate(s):
     while True:
-        if '()' in str:
-            str = str.replace ( '()' , '' )
-        elif '{}' in str:
-            str = str.replace ( '{}' , '' )
-        elif '[]'in str:
-            str = str.replace ( '[]' , '' )
+        if '()' in s:
+            s = s.replace ( '()' , '' )
+        elif '{}' in s:
+            s = s.replace ( '{}' , '' )
+        elif '[]' in s:
+            s = s.replace ( '[]' , '' )
         else:
-            return not str
-    
+            break
+    return s == ''
+
 
 
 print(validate(brackets))

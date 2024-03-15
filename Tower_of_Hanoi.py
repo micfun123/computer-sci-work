@@ -1,4 +1,7 @@
+move = 0
 def solver(number_of_disks, start, end, temp):
+    global move
+    move += 1
     if number_of_disks == 1:
         print("Move disk 1 from rod", start, "to rod", end)
         return
@@ -7,4 +10,6 @@ def solver(number_of_disks, start, end, temp):
     solver(number_of_disks - 1, temp, end, start)
 
 
-solver(100, "A", "C", "B")
+
+solver(5, "A", "C", "B")
+print("Number of moves: ", move)
