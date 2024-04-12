@@ -17,7 +17,7 @@ public class Tower_of_Hanoi {
         char start = 'A';
         char end = 'C';
         char temp = 'B';
-        solver(3, start, end, temp);       
+        solver(3, start, end, temp);
 
     }
 }
