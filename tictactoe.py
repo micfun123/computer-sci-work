@@ -20,3 +20,5 @@ def checker():
     return False
 
 
+while not checker():
+    print(board)
