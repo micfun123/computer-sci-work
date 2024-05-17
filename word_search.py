@@ -1,10 +1,10 @@
 import random
 import string
 
-width = 13
-height = 13
+width = 15
+height = 15
 
-words = ['cat', 'dog', 'ham', 'human', 'man', 'moons']
+words = []
 
 def create_grid(width, height):
     """Create a grid filled with random letters."""
@@ -53,5 +53,16 @@ def maker(words):
                 if grid[i][j] == " ":
                     grid[i][j] = random.choice(string.ascii_letters)
     print_grid(grid)
-# Test the maker function
+
+ready = False
+width = int(input("Enter the width: "))
+height = int(input("Enter the height: "))
+while not ready: 
+    toadd = str(input("Enter a word: "))
+    words.append(toadd)
+    isdone = int(input("1. to add a new word, 2. to generate the word search"))
+    if isdone == 2:
+        ready = True
+
 maker(words)
+
