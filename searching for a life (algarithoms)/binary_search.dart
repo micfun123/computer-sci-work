@@ -11,7 +11,7 @@ int binary_search(arr,key){
     if(arr[mid] > key){
       end = mid -1;
     }
-    if(arr[mid] < key){
+    else{
       start = mid +1;
     }
   }
